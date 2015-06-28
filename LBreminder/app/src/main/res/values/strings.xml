@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Application -->
+    <color name="holo_blue_light">#ff33b5e5</color>
+
+    <!-- Math Alarm Activity -->
+    <string name="app_name">LB Reminder</string>
+    <string name="title_activity_set_alarms">Set Alarm</string>
+    <string name="no_alarms">No alarms have been set</string>
+
+    <string name="button_new">New</string>
+
+    <!-- Menu -->
+    <string name="menu_item_new">New</string>
+    <string name="menu_item_save">Save</string>
+    <string name="menu_item_delete">Cancel</string>
+
+    <string name="dismiss_button_text">Dismiss</string>
+
+    <color name="title_background_color">#000000</color>
+
+    <string name="button_delete">Delete</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_map_main">mapMain</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

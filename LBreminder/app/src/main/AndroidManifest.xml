@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chart001.lbreminder" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <permission
+        android:name="com.promlert.mapdemo.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>
+
+    <uses-permission android:name="com.promlert.mapdemo.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Alarm Clock"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+        <meta-data
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:value="AIzaSyD_Y5Wu2Y1TjFJhkE6eIgykjNxNAjryj-0"/>
+        <activity
+            android:name="com.example.chart001.lbreminder.mapMainFragment"
+            android:label="Alarm Clock" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.chart001.lbreminder.preferences.AlarmPreActivity"
+            android:label="Alarm Clock"
+            android:parentActivityName="com.example.chart001.lbreminder.AlarmActivity" >
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.chart001.lbreminder.AlarmActivity" />
+        </activity>
+
+        <service
+            android:process="com.example.chart001.lbreminder.serviceProcess"
+            android:name="com.example.chart001.lbreminder.service.AlarmSer"
+            android:icon="@mipmap/ic_launcher"
+            android:label="Alarm Clock"
+            >
+        </service>
+        <receiver android:name="com.example.chart001.lbreminder.service.AlarmSerReciever" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name = "com.example.chart001.lbreminder.Alert.AlarmAlertActivity"
+            android:label="Alarm Clock"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name=".mapMain"
+            android:label="mapMain">
+
+        </activity>
+        <receiver android:name="com.example.chart001.lbreminder.Alert.AlarmAlertReciever" >
+        </receiver>
+        <receiver android:name = "com.example.chart001.lbreminder.phone.PhoneStateChangeReciever">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
